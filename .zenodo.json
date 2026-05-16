@@ -3,8 +3,13 @@
   "upload_type": "publication",
   "publication_type": "technicalnote",
   "description": "A verifiable behavioral datapoint: a large language model agent (Claude Code, Opus 4.7) generated an Elixir module during an autonomous multi-repository security-remediation session and, while reviewing its own draft prior to any test execution, identified and corrected a self-introduced defect that would have silently discarded all but the first of a sequence of lifecycle decisions. Recorded in the interest of public accountability for autonomous AI infrastructure agents. Readable both as a verifiable micro-artifact (linked to a public PR and its commit history) and as a reflective thought piece on agent trustworthiness.",
+  "version": "2",
   "creators": [
-    { "name": "Jewell, Jonathan D. A.", "affiliation": "The Open University" }
+    {
+      "name": "Jewell, Jonathan D. A.",
+      "affiliation": "The Open University",
+      "orcid": "0000-0002-3078-6652"
+    }
   ],
   "keywords": [
     "autonomous agents",
