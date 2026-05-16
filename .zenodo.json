@@ -1,0 +1,28 @@
+{
+  "title": "Pre-execution self-review catching a self-introduced state-threading defect in an autonomous code-remediation agent",
+  "upload_type": "publication",
+  "publication_type": "technicalnote",
+  "description": "A verifiable behavioral datapoint: a large language model agent (Claude Code, Opus 4.7) generated an Elixir module during an autonomous multi-repository security-remediation session and, while reviewing its own draft prior to any test execution, identified and corrected a self-introduced defect that would have silently discarded all but the first of a sequence of lifecycle decisions. Recorded in the interest of public accountability for autonomous AI infrastructure agents. Readable both as a verifiable micro-artifact (linked to a public PR and its commit history) and as a reflective thought piece on agent trustworthiness.",
+  "creators": [
+    { "name": "Jewell, Jonathan D. A.", "affiliation": "The Open University" }
+  ],
+  "keywords": [
+    "autonomous agents",
+    "large language models",
+    "software engineering",
+    "AI accountability",
+    "self-review",
+    "code remediation",
+    "Claude Code"
+  ],
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/hyperpolymath/hypatia/pull/264",
+      "scheme": "url"
+    }
+  ],
+  "notes": "Agent: Claude Code (Anthropic), model Opus 4.7 (1M context). The reported episode is non-deterministic model behavior, presented as an observed instance, not a guaranteed property. No tool/harness malfunction occurred."
+}
