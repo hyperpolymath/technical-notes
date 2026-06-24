@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: CC-BY-4.0
+// SPDX-License-Identifier: MPL-2.0
 #set document(
   title: "Pre-execution self-review catching a self-introduced state-threading defect in an autonomous code-remediation agent",
   author: "Jonathan D. A. Jewell",
