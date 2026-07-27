@@ -1,60 +1,49 @@
+<!--
+SPDX-License-Identifier: CC-BY-SA-4.0
+SPDX-FileCopyrightText: 2026 Jonathan D.A. Jewell (hyperpolymath)
+-->
+
 # Governance
 
-## Overview
+`technical-notes` is a single-maintainer repository in the
+`hyperpolymath` estate. There is no multi-maintainer or RFC process
+here; estate-wide policy lives in
+[`hyperpolymath/standards`](https://github.com/hyperpolymath/standards).
 
-This project is governed by the following principles and structures to ensure transparent, inclusive, and effective decision-making.
+## Maintainer
 
-## Roles and Responsibilities
+See [`MAINTAINERS`](MAINTAINERS) for who currently maintains this repo.
 
-### Maintainers
+## Decision making
 
-Maintainers are responsible for:
-- Reviewing and merging pull requests
-- Managing releases and versioning
-- Ensuring code quality and standards
-- Triaging issues and bug reports
-- Community engagement and support
-
-### Contributors
-
-Contributors are expected to:
-- Follow the code of conduct
-- Submit well-documented pull requests
-- Write tests for new functionality
-- Maintain existing tests
-- Update documentation as needed
-
-## Decision Making
-
-### Minor Changes
-- Can be made by any maintainer
-- Include bug fixes, documentation updates, dependency updates
-
-### Major Changes
-- Require discussion in issues or pull requests
-- Include new features, architectural changes, API changes
-- Need approval from at least 2 maintainers
-
-### Breaking Changes
-- Require RFC (Request for Comments) process
-- Need approval from majority of maintainers
-- Must include migration guide
-
-## Code of Conduct
-
-All participants are expected to follow our Code of Conduct. Violations can be reported to the maintainers.
-
-## Communication
-
-- **Issues**: For bug reports and feature requests
-- **Discussions**: For questions and general discussion
-- **Pull Requests**: For code contributions
+The maintainer accepts, revises, or declines contributions directly.
+A non-trivial process change — how notes are drafted, versioned, or
+archived — is recorded as an ADR in
+[`docs/decisions/`](docs/decisions/) rather than decided ad hoc.
 
 ## Licensing
 
-All contributions are made under the terms of the repository's LICENSE file.
-By submitting a pull request, you agree to license your contributions accordingly.
+* Repository tooling and process documentation: MPL-2.0 or
+  CC-BY-SA-4.0 per the SPDX header on each file (see `LICENSE` /
+  `LICENSES/`).
+* Each published note carries its own licence, set at Zenodo-deposit
+  time and recorded in that note's Zenodo metadata (see the root
+  `README.md` § Licence).
 
----
+## CI-enforced governance
 
-*Last updated: 2026-07-18*
+SPDX-header presence, licence consistency, secrets scanning, and
+workflow security are enforced by the shared reusable workflow in
+`hyperpolymath/standards`; see
+[`.github/workflows/governance.yml`](.github/workflows/governance.yml)
+and
+[`.github/workflows/hypatia-scan.yml`](.github/workflows/hypatia-scan.yml).
+
+## Communication
+
+* **Issues**: bugs or gaps in this repo — broken DOI links, wrong
+  citations, process gaps.
+* **Pull requests**: proposed changes; see
+  [`CONTRIBUTING.md`](CONTRIBUTING.md).
+* **Security**: follow estate policy in `hyperpolymath/standards` —
+  do not file security-relevant findings as public issues.

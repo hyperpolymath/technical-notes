@@ -1,47 +1,59 @@
+<!--
+SPDX-License-Identifier: CC-BY-SA-4.0
+SPDX-FileCopyrightText: 2026 Jonathan D.A. Jewell (hyperpolymath)
+-->
+
 # Architecture
 
-## Overview
+`technical-notes` is a documentation archive, not a software project:
+it holds short, citable technical notes (Markdown, optionally with a
+Typst source and rendered PDF) that are individually deposited on
+Zenodo with a DOI. There is no source code, no build system, and no
+runtime component.
 
-This repository follows a modular, maintainable architecture designed for clarity, scalability, and long-term sustainability.
-
-## Directory Structure
+## Layout
 
 ```
 .
-├── src/           # Source code
-├── tests/        # Test suites
-├── docs/         # Documentation
-├── scripts/      # Utility scripts
-├── config/       # Configuration files
-├── LICENSE       # License file
-├── LICENSES/     # Full license texts
-└── README.adoc   # Project documentation
+├── README.md              # index of published notes (title, date, DOI)
+├── <note-slug>.md         # note source (Markdown)
+├── <note-slug>.pdf        # rendered note (optional, Typst-produced)
+├── <note-slug>.typ        # Typst source for the PDF (optional)
+├── docs/                  # process documentation (this file's siblings)
+├── LICENSE / LICENSES/    # MPL-2.0 (repo tooling/process docs) +
+│                          #   CC-BY-SA-4.0; individual notes carry
+│                          #   their own licence at Zenodo-deposit time
+└── .github/               # CI wrappers (governance, security scan)
 ```
 
-## Design Principles
+## The invariant
 
-- **Separation of Concerns**: Each module has a single responsibility
-- **Testability**: Code is written to be easily testable
-- **Documentation**: All public APIs are documented
-- **Configuration**: Environment-specific settings are externalized
+Every note listed in the README resolves to a real, citable Zenodo
+record. If that link breaks, the repo has failed at its one job.
 
-## Dependencies
+## Publishing flow
 
-- External dependencies are minimized and clearly declared
-- Version pinning is used for reproducibility
+There is no runtime to diagram; the only "flow" is authorial:
 
-## Security Considerations
+```
+draft note (.md [+ .typ -> .pdf])
+        |
+        v
+   README table entry (title, date, concept DOI, version DOI)
+        |
+        v
+   Zenodo deposit (direct API today; GitHub Release once the
+   Zenodo-GitHub integration is enabled — see README § Zenodo archiving)
+```
 
-- Sensitive data is never committed to the repository
-- Secrets are managed through environment variables or secure vaults
-- Regular dependency audits are performed
+## Out of scope
 
-## Maintainability
+* No source code, package, or binary is built or shipped from this repo.
+* No API, service, or CLI.
+* No automated test suite — there is no code to exercise.
 
-- Code follows consistent style guidelines
-- Pull requests require review and CI checks
-- Issues and discussions are tracked transparently
+## See also
 
----
-
-*Last updated: 2026-07-18*
+* [docs/usage.adoc](docs/usage.adoc) — how to cite a note.
+* [docs/contributing.adoc](docs/contributing.adoc) — how to add a new note.
+* [docs/decisions/](docs/decisions/) — ADRs, historical record of why this shape.

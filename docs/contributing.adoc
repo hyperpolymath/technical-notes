@@ -1,61 +1,59 @@
 // SPDX-License-Identifier: CC-BY-SA-4.0
 // SPDX-FileCopyrightText: 2026 Jonathan D.A. Jewell (hyperpolymath) <6759885+hyperpolymath@users.noreply.github.com>
 = Contributing — technical-notes
-:revdate: 2026-MM-DD
+:revdate: 2026-07-27
 
 == Audience
 
-Developers working *on* `technical-notes`. For consumers (people calling
-or depending on it) see link:./usage.adoc[usage.adoc].
+Developers working *on* `technical-notes` — i.e. adding or revising a
+note, or improving the repo's own process documentation. For readers and
+citers, see link:./usage.adoc[usage.adoc].
+
+== What this repo is
+
+A documentation archive: short technical notes, each individually
+archived on Zenodo with a DOI. There is no source code, build, or test
+suite.
 
 == Local-dev setup
 
-Prerequisites — the minimum versions and where to get them:
-
-* `<tool 1>` v`<version>` — `<install instruction>`.
-* `<tool 2>` v`<version>` — `<install instruction>`.
-* GPG signing key configured (estate policy — all commits must be
-  signed). See
-  link:https://github.com/hyperpolymath/standards/blob/main/docs/secure-coding-training.md[standards/docs/secure-coding-training.md].
-
-One-shot setup:
+No toolchain is required to read or edit a note — they are plain
+Markdown. If a note ships a Typst-rendered PDF, Typst is needed to
+reproduce it:
 
 [source,bash]
 ----
 git clone git@github.com:hyperpolymath/technical-notes.git
 cd technical-notes
-just setup       # installs deps, sets up hooks
-just test        # runs the full test suite
+typst compile <note-slug>.typ <note-slug>.pdf   # only if the note has a .typ source
 ----
 
-== Running tests
+A GPG signing key must be configured — estate policy requires all
+commits to be signed. See
+link:https://github.com/hyperpolymath/standards/blob/main/docs/secure-coding-training.md[standards/docs/secure-coding-training.md].
 
-* **Unit**: `just test-unit` — fast, no I/O.
-* **Integration**: `just test-int` — uses real services (database,
-  HTTP, etc.). Estate policy: prefer real over mocked
-  (see `feedback_integration_tests_real_db` in maintainer's memory).
-* **Property**: `just test-prop` — randomised, slower; budget
-  documented in `docs/proof-debt.md` if applicable.
-* **Full**: `just test` — runs all of the above.
+== Conventions
 
-== Code style
-
-We enforce style via CI (governance-reusable.yml from hyperpolymath/standards).
-Locally:
-
-[source,bash]
-----
-just fmt         # auto-format
-just lint        # static checks
-----
+There is no code, so "style" here means documentation conventions,
+enforced via CI (`governance.yml`, wrapping
+`governance-reusable.yml` from `hyperpolymath/standards`):
 
 * All commits must be **GPG-signed** (CI enforces; see
   link:https://github.com/hyperpolymath/standards[standards]).
-* All source files must carry an **SPDX-License-Identifier** header
+* All files must carry an **SPDX-License-Identifier** header
   (CI enforces).
 * Conventional commits — `feat`, `fix`, `chore`, `refactor`, `docs`,
   `test`, `ci`, `revert` (CHANGELOG is auto-generated from these
   via link:https://github.com/hyperpolymath/standards/blob/main/.github/workflows/changelog-reusable.yml[`changelog-reusable.yml`]).
+
+== Adding a new note
+
+. Draft the note as Markdown; add a `.typ` source and rendered `.pdf`
+  if you want a typeset version.
+. Deposit it on Zenodo (direct API today, or via a GitHub Release once
+  the Zenodo–GitHub integration is enabled) to mint a DOI.
+. Add a row to the README table: title, date, concept DOI, latest
+  version DOI.
 
 == Branching & PR workflow
 
@@ -68,23 +66,19 @@ just lint        # static checks
   (see standards#196 audit and policies).
 . CI must be green. The PR auto-merges when checks pass + reviews land.
 
-== Adding a new dependency
-
-. State the *why* in the PR body — what does this dependency unlock?
-. Check provenance (maintained, audited, no malicious history).
-. Pin to a SHA, not a tag.
-. Update `docs/architecture.adoc#Dependencies`.
-
 == Adding an ADR
 
-When you make a non-obvious design decision, write it down:
+When you make a non-obvious process decision — e.g. how notes are
+versioned, licensed, or archived — write it down:
 
 . Copy `docs/decisions/0001-template.adoc` → `0002-<slug>.adoc`.
 . Fill in: Context, Decision, Consequences, Alternatives.
-. Link the ADR from the README or relevant code as a comment.
+. Link the ADR from the README or relevant doc as a comment.
 
 == Reporting issues
 
-* Bugs in `technical-notes`: file at `hyperpolymath/technical-notes/issues`.
+* Issues with `technical-notes` itself — a broken DOI link, a wrong
+  citation, a process gap: file at
+  `hyperpolymath/technical-notes/issues`.
 * Estate-wide concerns (policy, conventions, CI): file at
   `hyperpolymath/standards/issues`.
