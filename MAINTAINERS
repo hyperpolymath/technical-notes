@@ -1,3 +1,8 @@
+<!--
+SPDX-License-Identifier: CC-BY-SA-4.0
+SPDX-FileCopyrightText: 2026 Jonathan D.A. Jewell (hyperpolymath)
+-->
+
 # Maintainers
 
 This file lists the current maintainers of this project.
@@ -6,38 +11,15 @@ This file lists the current maintainers of this project.
 
 | Name | GitHub | Role | Since |
 |------|--------|------|-------|
-| Metadatastician | @metadatastician | Primary | Project Start |
+| Jonathan D.A. Jewell | [@hyperpolymath](https://github.com/hyperpolymath) | Primary | Project start |
 
 ## Emeritus Maintainers
 
 None at this time.
 
-## Becoming a Maintainer
+## Notes
 
-To become a maintainer:
-
-1. Demonstrate consistent, high-quality contributions
-2. Show understanding of the project's goals and architecture
-3. Be active in code reviews and community discussions
-4. Be nominated by an existing maintainer
-5. Be approved by consensus of existing maintainers
-
-## Maintainer Responsibilities
-
-- Reviewing and merging pull requests
-- Managing releases
-- Triaging issues
-- Enforcing code standards
-- Mentoring new contributors
-- Participating in decision-making
-
-## Maintainer Expectations
-
-- Respond to issues and PRs in a timely manner
-- Follow the code of conduct
-- Be transparent in decision-making
-- Communicate clearly and respectfully
-
----
-
-*Last updated: 2026-07-18*
+This is currently a single-maintainer repository, so there is no
+formal "becoming a maintainer" process. See
+[`GOVERNANCE.md`](GOVERNANCE.md) for how decisions are made and
+[`CONTRIBUTING.md`](CONTRIBUTING.md) for how to propose a change.
