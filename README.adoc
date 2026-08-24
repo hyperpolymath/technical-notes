@@ -1,0 +1,37 @@
+== technical-notes
+
+Citable short technical notes and observations — AI accountability,
+agent behaviour, software engineering. Each note is archived on
+https://zenodo.org/[Zenodo] with a DOI.
+
+=== Notes
+
+[width="100%",cols="14%,12%,41%,33%",options="header",]
+|===
+|Note |Date |Cite (concept DOI) |Latest version
+|link:agent-self-review-precommit.md[Pre-execution self-review catching
+a self-introduced state-threading defect in an autonomous
+code-remediation agent] (link:agent-self-review-precommit.pdf[PDF])
+|2026-05-16
+|https://doi.org/10.5281/zenodo.20245468[10.5281/zenodo.20245468] |v2 —
+https://doi.org/10.5281/zenodo.20246057[10.5281/zenodo.20246057]
+|===
+
+____
+Cite the *concept DOI* (`+10.5281/zenodo.20245468+`) — it always
+resolves to the latest version. v1 = `+10.5281/zenodo.20245469+`.
+____
+
+=== Zenodo archiving
+
+This repo is intended to be connected to the Zenodo–GitHub integration
+(Zenodo → _GitHub_ settings → enable this repository). After that,
+*every GitHub Release* auto-deposits a new version, grouped under a
+single _concept DOI_ so versions stay citable as "`latest`". The note
+above was deposited directly via the Zenodo API as a standalone record
+before the integration was wired; future notes (and new versions) should
+go via a GitHub Release.
+
+=== Licence
+
+Content is licensed link:LICENSE[CC-BY-4.0].
