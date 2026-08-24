@@ -1,19 +1,14 @@
-<!--
-SPDX-License-Identifier: CC-BY-SA-4.0
-SPDX-FileCopyrightText: 2026 Jonathan D.A. Jewell (hyperpolymath)
--->
+== Architecture
 
-# Architecture
-
-`technical-notes` is a documentation archive, not a software project:
+`+technical-notes+` is a documentation archive, not a software project:
 it holds short, citable technical notes (Markdown, optionally with a
-Typst source and rendered PDF) that are individually deposited on
-Zenodo with a DOI. There is no source code, no build system, and no
-runtime component.
+Typst source and rendered PDF) that are individually deposited on Zenodo
+with a DOI. There is no source code, no build system, and no runtime
+component.
 
-## Layout
+=== Layout
 
-```
+....
 .
 ├── README.md              # index of published notes (title, date, DOI)
 ├── <note-slug>.md         # note source (Markdown)
@@ -24,18 +19,18 @@ runtime component.
 │                          #   CC-BY-SA-4.0; individual notes carry
 │                          #   their own licence at Zenodo-deposit time
 └── .github/               # CI wrappers (governance, security scan)
-```
+....
 
-## The invariant
+=== The invariant
 
 Every note listed in the README resolves to a real, citable Zenodo
 record. If that link breaks, the repo has failed at its one job.
 
-## Publishing flow
+=== Publishing flow
 
-There is no runtime to diagram; the only "flow" is authorial:
+There is no runtime to diagram; the only "`flow`" is authorial:
 
-```
+....
 draft note (.md [+ .typ -> .pdf])
         |
         v
@@ -44,16 +39,16 @@ draft note (.md [+ .typ -> .pdf])
         v
    Zenodo deposit (direct API today; GitHub Release once the
    Zenodo-GitHub integration is enabled — see README § Zenodo archiving)
-```
+....
 
-## Out of scope
+=== Out of scope
 
 * No source code, package, or binary is built or shipped from this repo.
 * No API, service, or CLI.
 * No automated test suite — there is no code to exercise.
 
-## See also
+=== See also
 
-* [docs/usage.adoc](docs/usage.adoc) — how to cite a note.
-* [docs/contributing.adoc](docs/contributing.adoc) — how to add a new note.
-* [docs/decisions/](docs/decisions/) — ADRs, historical record of why this shape.
+* docs/usage.adoc — how to cite a note.
+* docs/contributing.adoc — how to add a new note.
+* docs/decisions/ — ADRs, historical record of why this shape.

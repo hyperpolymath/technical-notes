@@ -1,0 +1,44 @@
+== Governance
+
+`+technical-notes+` is a single-maintainer repository in the
+`+hyperpolymath+` estate. There is no multi-maintainer or RFC process
+here; estate-wide policy lives in
+https://github.com/hyperpolymath/standards[`+hyperpolymath/standards+`].
+
+=== Maintainer
+
+See link:MAINTAINERS[`+MAINTAINERS+`] for who currently maintains this
+repo.
+
+=== Decision making
+
+The maintainer accepts, revises, or declines contributions directly. A
+non-trivial process change — how notes are drafted, versioned, or
+archived — is recorded as an ADR in
+link:docs/decisions/[`+docs/decisions/+`] rather than decided ad hoc.
+
+=== Licensing
+
+* Repository tooling and process documentation: MPL-2.0 or CC-BY-SA-4.0
+per the SPDX header on each file (see `+LICENSE+` / `+LICENSES/+`).
+* Each published note carries its own licence, set at Zenodo-deposit
+time and recorded in that note’s Zenodo metadata (see the root
+`+README.md+` § Licence).
+
+=== CI-enforced governance
+
+SPDX-header presence, licence consistency, secrets scanning, and
+workflow security are enforced by the shared reusable workflow in
+`+hyperpolymath/standards+`; see
+link:.github/workflows/governance.yml[`+.github/workflows/governance.yml+`]
+and
+link:.github/workflows/hypatia-scan.yml[`+.github/workflows/hypatia-scan.yml+`].
+
+=== Communication
+
+* *Issues*: bugs or gaps in this repo — broken DOI links, wrong
+citations, process gaps.
+* *Pull requests*: proposed changes; see
+link:CONTRIBUTING.md[`+CONTRIBUTING.md+`].
+* *Security*: follow estate policy in `+hyperpolymath/standards+` — do
+not file security-relevant findings as public issues.
